@@ -1,0 +1,33 @@
+
+.phone {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: normal;
+
+    &:before {
+      content: url('/img/png/phone.png');
+      width: 12px;
+      height: 11px;
+      margin-right: 5px;
+    }
+  }
+}
+
+
+.phone__link--footer {
+  color: #0f5a47;
+  font-size: 21px;
+
+  &:before {
+    content: url('/img/png/phone-black.png');
+    width: 12px;
+    height: 11px;
+  }
+}
+
+

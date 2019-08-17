@@ -1,24 +1,15 @@
 .menu {
-  .menu__list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
-  .menu__link {
-    font-style: 12px;
-    line-height: 23px;
+  &__link {
+    font-size: 18px;
+    line-height: 30px;
     text-decoration: none;
-    letter-spacing: 0.96px;
-    color: $menu-font-color;
-    text-transform: uppercase;
-    font-weight: 300;
-    border-bottom: 1px solid transparent;
-    margin: 0 3px;
-
-    &:hover {
-      border-bottom: 1px solid $menu-font-color;
-    }
+    color: $white;
+    font-weight: normal;
+    margin: 0 15px;
   }
 }
 
