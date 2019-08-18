@@ -26,16 +26,17 @@ ul {
 
 .wrapper {
   position: relative;
-	min-height: 100%;
+  min-height: 100%;
   width: 100%;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
 }
 
 .container {
-	margin: 0 auto;
-	max-width: 940px;
+  // padding: 0 7.28%;
+  width: auto;
+  margin: 0 auto;
+  max-width: 58.75rem;
+  min-height: 100%;
 }
 
 p {

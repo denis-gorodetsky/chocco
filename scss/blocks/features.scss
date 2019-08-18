@@ -1,0 +1,63 @@
+.features {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+.features__icon {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background-color: #f2f5f4;
+  margin-bottom: 25px;
+  background-image: url('/img/icons/1.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 55%;
+
+  &--hearteyes {
+    background-image: url('/img/icons/3.svg');
+  }
+
+  &--muscle {
+    background-image: url('/img/icons/2.svg');
+  }
+
+  &:after {
+    content: "";
+    width: 67px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    right: -122%;
+    transform: translateY(-50%);
+    background-image: url('/img/png/promo-points.png');
+  }
+}
+
+.features__icon--muscle:after {
+  content: none;
+}
+
+.features__title {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 13px;
+}
+
+.features__text {
+  width: 85%;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+

@@ -1,0 +1,24 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  margin-left: 17px;
+}
+
+.carousel__item {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.carousel__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: 92px;
+  max-height: 92px;
+  border-radius: 50%;
+}
+

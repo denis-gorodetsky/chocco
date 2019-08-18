@@ -1,0 +1,34 @@
+.features-welcome {
+  display: flex;
+  width: 100%;
+}
+
+.features-welcome__item {
+  display: flex;
+  margin-right: 8%;
+}
+
+.features-welcome__icon {
+  width: 44px;
+  height: 41px;
+  background: url('/img/icons/5.svg') center center no-repeat;
+  margin-right: 10px;
+
+  &--ship {
+    background-image: url('/img/icons/6.svg');
+    width: 50px;
+    height: 40px;
+  }
+
+  &--figure {
+    background-image: url('/img/icons/4.svg');
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.features-welcome__desc {
+  width: 50%;
+  font-weight: normal;
+  line-height: 1.25rem;
+}
