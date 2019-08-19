@@ -1,3 +1,33 @@
+.why-chocco {
+  position: relative;
+}
+
+.why-chocco:before {
+  content: "";
+  width: 11.9375rem;
+  height: 19.625rem;
+  position: absolute;
+  left: 0;
+  top: 12%;
+  z-index: 10;
+  display: block;
+  background: url(/img/png/promo-pattern.png) no-repeat;
+  background-size: cover;
+}
+
+.why-chocco:after {
+  content: "";
+  width: 10.0625rem;
+  height: 18.25rem;
+  position: absolute;
+  left: 0;
+  top: 56%;
+  z-index: 10;
+  display: block;
+  background: url(/img/png/promo-raspberries.png) no-repeat;
+  background-size: cover;
+}
+
 .why-chocco__container {
   max-width: 64.375rem;
 }

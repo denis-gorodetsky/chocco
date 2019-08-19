@@ -2,7 +2,7 @@
   display: flex;
   padding: 50px 30px 35px 45px ;
   background-image: url('/img/png/review-bg.png');
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .article__img {
@@ -22,11 +22,13 @@
 }
 
 .article__desc {
-  line-height: 23px;
-  margin-bottom: 20px;
+  line-height: 1.390rem;
+  margin-bottom: 25px;
 }
 
 .article__desc, .article__name {
   font-size: 18px;
   font-weight: normal;
 }
+
+
