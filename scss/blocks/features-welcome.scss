@@ -11,17 +11,17 @@
 .features-welcome__icon {
   width: 44px;
   height: 41px;
-  background: url('/img/icons/5.svg') center center no-repeat;
+  background: url('../img/icons/5.svg') center center no-repeat;
   margin-right: 10px;
 
   &--ship {
-    background-image: url('/img/icons/6.svg');
+    background-image: url('../img/icons/6.svg');
     width: 50px;
     height: 40px;
   }
 
   &--figure {
-    background-image: url('/img/icons/4.svg');
+    background-image: url('../img/icons/4.svg');
     width: 42px;
     height: 42px;
   }

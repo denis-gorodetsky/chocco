@@ -18,17 +18,17 @@
   border-radius: 50%;
   background-color: #f2f5f4;
   margin-bottom: 25px;
-  background-image: url('/img/icons/1.svg');
+  background-image: url('../img/icons/1.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 55%;
 
   &--hearteyes {
-    background-image: url('/img/icons/3.svg');
+    background-image: url('../img/icons/3.svg');
   }
 
   &--muscle {
-    background-image: url('/img/icons/2.svg');
+    background-image: url('../img/icons/2.svg');
   }
 
   &:after {
@@ -39,7 +39,7 @@
     top: 50%;
     right: -122%;
     transform: translateY(-50%);
-    background-image: url('/img/png/promo-points.png');
+    background-image: url('../img/png/promo-points.png');
   }
 }
 
