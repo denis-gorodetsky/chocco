@@ -1,0 +1,43 @@
+.welcome {
+  position: relative;
+  color: $white;
+  background-color: #61c4d9;
+  margin-bottom: 100px;
+}
+
+.welcome:before {
+  content: "";
+  width: 66rem;
+  height: 22.0625rem;
+  position: absolute;
+  right: 11.5%;
+  bottom: -8.5%;
+  z-index: 10;
+  display: block;
+  background: url(/img/png/welcome-decor.png) no-repeat;
+  background-size: cover;
+}
+
+.welcome:after {
+  content: "";
+  width: 32rem;
+  height: 40.5rem;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+  display: block;
+  background-size: cover;
+  background-image: url('/img/png/welcome-pattern.png');
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.welcome__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.5%;
+  z-index: 30;
+}
