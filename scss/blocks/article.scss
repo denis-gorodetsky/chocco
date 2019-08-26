@@ -1,12 +1,12 @@
 .article {
   display: flex;
-  padding: 50px 30px 35px 45px ;
+  padding: rem(50px) rem(30px) rem(35px) rem(45px);
   background-image: url('../img/png/review-bg.png');
-  margin-bottom: 15px;
+  margin-bottom: rem(15px);
 }
 
 .article__img {
- margin-right: 18px;
+ margin-right: rem(18px);
 }
 
 .article__text {
@@ -14,20 +14,20 @@
 }
 
 .article__title {
-  font-size: 30px;
+  font-size: rem(30px);
   font-weight: 500;
   color: #323232;
-  padding-top: 10px;
-  margin-bottom: 15px;
+  padding-top: rem(10px);
+  margin-bottom: rem(15px);
 }
 
 .article__desc {
-  line-height: 1.390rem;
-  margin-bottom: 25px;
+  line-height: rem(22px);
+  margin-bottom: rem(25px);
 }
 
 .article__desc, .article__name {
-  font-size: 18px;
+  font-size:rem(18px);
   font-weight: normal;
 }
 

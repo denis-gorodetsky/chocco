@@ -14,7 +14,7 @@
 .fixed-nav__item {
   position: relative;
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: rem(24px);
   cursor: pointer;
 
   &:last-child {
@@ -31,7 +31,7 @@
     transform: translate(-50%, -50%);
     display: block;
     border-radius: 50%;
-    border: 3px solid $white;
+    border: rem(3px) solid $white;
   }
 
 }
@@ -39,8 +39,8 @@
 .fixed-nav__item--active {
   &:after {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: rem(16px);
+  height: rem(16px);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,6 +48,6 @@
   display: block;
   border-radius: 50%;
   transition: 0.3s;
-  border: 2px solid $white;
+  border: rem(2px) solid $white;
   }
 }

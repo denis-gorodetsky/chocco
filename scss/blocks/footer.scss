@@ -1,4 +1,55 @@
-.footer__section {
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.footer__container {
+  padding: 0.8% 0;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__row {
+  width: 50%;
+  display: flex;
+}
+
+.footer__row--right {
+  justify-content: flex-end;
+}
+
+.address {
+  color: #0f5a47;
+}
+
+.address__company {
+  margin-bottom: 1.28%;
+  font-weight: normal;
+  font-size: rem(21px);
+  color: #010101;
+}
+
+.phone__link--footer {
+  color: #0f5a47;
+  font-size: rem(21px);
+
+  &:before {
+    content: url('../img/png/phone-black.png');
+    width: rem(12px);
+    height: rem(11px);
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socials__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

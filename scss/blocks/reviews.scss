@@ -1,5 +1,6 @@
 .reviews {
   position: relative;
+  margin-bottom: 60px;
 }
 
 .reviews:before {
@@ -16,8 +17,7 @@
 }
 
 .reviews__title {
-  margin-bottom: 25px;
-  text-align: center;
+  margin-bottom: rem(25px);
 }
 
 .reviews__block {

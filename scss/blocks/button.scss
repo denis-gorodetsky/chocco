@@ -7,9 +7,9 @@ button {
 }
 
 .button {
-  padding: 15px 35px;
+  padding: rem(15px) rem(35px);
   background-color: #0b4d3c;
-  border-radius: 40px 40px;
+  border-radius: rem(40px) rem(40px);
   font-size: 1.1875rem;
   font-weight: 900;
   text-transform: uppercase;
