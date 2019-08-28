@@ -2,12 +2,31 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  z-index: 20;
+
+  @include tablets{
+    flex-direction: column-reverse;
+    align-items: center;
+
+  }
+
+  @include phones{
+    flex-direction: column-reverse;
+  }
 }
 
 .presentation__block {
   display: flex;
   flex-direction: column;
+  z-index: $presentation-text;
+
+  @include tablets{
+    align-items: center;
+  }
+
+  @include phones{
+    align-items: center;
+  }
+
 }
 
 .presentation__desc {
@@ -36,9 +55,22 @@
 }
 
 .presentation__img {
+  position: relative;
+  z-index: $presentation-img;
   width: 125%;
   margin-right: rem(-55px);
   margin-top: rem(-10px);
+
+  @include tablets{
+    width: 56%;
+    margin: 0;
+
+  }
+
+  @include phones{
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .presentation__button {
@@ -48,6 +80,6 @@
   margin-bottom: rem(68px);
 
   &:hover {
-    box-shadow: rem(0px) rem(0px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
+    box-shadow: rem(0px) rem(8px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
   }
 }

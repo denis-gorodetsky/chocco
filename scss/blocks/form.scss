@@ -10,7 +10,6 @@
     position: absolute;
     top: -24%;
     right: 0;
-    z-index: 10;
     display: block;
     background: url("../img/png/form-blackberry.png");
     background-size: cover;
@@ -38,7 +37,6 @@
   padding-top: rem(68px);
   margin-bottom: rem(38px);
   position: relative;
-  z-index: 40;
 }
 
 .form {
@@ -47,7 +45,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  z-index: 40;
 }
 
 .form__client-info {
@@ -55,7 +52,6 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  z-index: 20;
 
 }
 
@@ -99,11 +95,9 @@
   height: rem(59px);
   padding-left: 2.4%;
   border: rem(3px) solid transparent;
+  transition: 0.2s;
   &:focus {
     border: rem(3px) solid #dde3bd;
-  }
-  &:invalid {
-    // border: rem( 3px) solid skyblue;
   }
 }
 
@@ -136,15 +130,15 @@
   height: rem(180px);
   border: rem(3px) solid transparent;
   resize: none;
+  transition: 0.2s;
   &:focus {
-    border: rem(3px) solid #dde3bd
+    border: rem(3px) solid #dde3bd;
   }
 }
 
 .form__radio-block {
   display: flex;
   padding-top: rem(8px);
-
 }
 
 .form__change, .form__card {
@@ -195,12 +189,10 @@
   transform: translate(-50%, -50%);
   border: rem(7px) solid;
   border-radius: 50%;
-
 }
 
 .form-checkbox {
   display: none;
-
 }
 
 .form__call {
@@ -228,13 +220,11 @@
   border: rem(3px) solid #0f5a47;
   border-top-color: transparent;
   border-right-color: transparent;
-  z-index: 20;
 }
 
 .form__button-block {
   width: 48.94%;
   position: relative;
-  z-index: 20;
 }
 
 .form__refresh {
@@ -242,9 +232,10 @@
   color: inherit;
   transition: .2s;
   font-weight: normal;
+  transform-origin: center center;
 
   &:hover {
-    font-size: rem(20px);
+    transform: scale(1.1);
   }
 }
 
@@ -254,6 +245,6 @@
   transition: .2s;
 
   &:hover {
-    box-shadow: rem(0px) rem(0px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
+    box-shadow: rem(0px) rem(8px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
   }
 }

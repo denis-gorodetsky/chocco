@@ -5,32 +5,43 @@
   margin-bottom: rem(100px);
 }
 
-.welcome:before {
+.welcome:after {
   content: "";
-  width: 66rem;
+  width: 100%;
   height: 22.0625rem;
   position: absolute;
-  right: 11.5%;
-  bottom: -8.5%;
-  z-index: 10;
-  display: block;
-  background: url(../img/png/welcome-decor.png) no-repeat;
-  background-size: cover;
+  bottom: -2.8125rem;
+  right: 0;
+  z-index: $welcome-before-decor;
+  background: url(../img/png/welcome-decor.png) center no-repeat;
+
+  @include tablets{
+    display: none;
+  }
+
+  @include phones{
+    display: none;
+  }
 }
 
-.welcome:after {
+.welcome:before {
   content: "";
   width: 32rem;
   height: 40.5rem;
   position: absolute;
   right: 0%;
   bottom: 0%;
-  z-index: 0;
-  display: block;
   background-size: cover;
   background-image: url('../img/png/welcome-pattern.png');
   background-repeat: no-repeat;
-  z-index: 0;
+
+  @include tablets{
+    display: none;
+  }
+
+  @include phones{
+    display: none;
+  }
 }
 
 .welcome__header {
@@ -39,5 +50,5 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 2.5%;
-  z-index: 30;
+  z-index: $head-menu-z-index;
 }

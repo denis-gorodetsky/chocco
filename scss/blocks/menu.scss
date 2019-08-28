@@ -2,34 +2,32 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  opacity: .8;
-  background: url("../img/jpeg/menu-bg.jpg") no-repeat;
+  background-image: url("../img/jpeg/menu-bg.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-  color: #fff;
-  margin-bottom: 60px;
-  
-  &::before {
+  color: $white;
+  margin-bottom: rem(60px);
+  z-index: $menu-z-index;
+
+  &:before {
     content: "";
     width: 100%;
     height: 100%;
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    background: #000;
-    opacity: .75;
+    background-color: #000;
+    opacity: .20;
   }
-  &::after {
+
+  &:after {
     content: "";
     width: rem(104px);
     height: rem(114px);
     position: absolute;
     top: -11%;
     left: 4%;
-    display: block;
     background:  url("../img/png/menu-raspberries.png") no-repeat;
-    background-size: cover;
   }
 
 }
@@ -37,85 +35,96 @@
 .menu__title {
   position: relative;
   padding-left: 7.28%;
-  padding-top: 9.46%;
+  padding-top: 5.86%;
   color: inherit;
-  z-index: 10;
 }
 
-.accordion{
-  display: flex;
+.accordeon{
   display: flex;
   justify-content: flex-end;
   color: inherit;
   cursor: pointer;
 }
 
-.accordion-item {
+.accordeon__item {
   position: relative;
   display: flex;
   overflow: hidden;
-
 }
 
-.accordion__img {
+.accordeon__box {
   position: relative;
-}
-
-.accordion__pic {
+  overflow: hidden;
+  background-image: url('../img/jpeg/menu-honey-bars.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: cover;
+  overflow: hidden;
   width: rem(100px);
   height: 100%;
-  object-fit: cover;
-  opacity: .4;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .40;
+  }
 }
 
-.accordion__text {
-  position: absolute;
-  bottom: 5%;
-  left: 25%;
-  transform: rotate(180deg);
+.accordeon__subtitle {
+  font-size: rem(48px);
   font-weight: 500;
+  position: absolute;
+  bottom: 6.3%;
+  left: 30%;
+  transform: rotate(180deg) translateX(25%);
   color: inherit;
   writing-mode: vertical-rl;
 }
 
-.accordion__description {
+.accordeon__desc {
   position: relative;
   width: 0;
   height: 0;
-  font-size: 1em;
-  line-height: 1.5;
   opacity: 0;
-  color: inherit;
-  transition: width cubic-bezier(.16,.14,.8,1.55) 1s;
-  z-index: 10;
+  color: #fff;
+  transition: width cubic-bezier(.16,.14,.8,1.55) .3s;
+  z-index: $menu-accordeon-desc-z-index;
 }
 
-.accordion-item--active .accordion__description {
+.accordeon__item--active .accordeon__desc {
   width: rem(430px);
-  padding: 56px 26px;
-  animation: accordion__description 1s ease-in-out forwards;
-  transition: width cubic-bezier(.16,.14,.8,1.55) 1s;
-
+  padding: rem(48px) rem(26px);
+  animation: accordeon__desc 1s ease-in-out forwards;
+  transition: width cubic-bezier(.16,.14,.8,1.55) 0.3s;
 }
 
-.accordion-item--active {
+.accordeon__item--active .accordeon__desc p {
+  color: inherit;
+  line-height: rem(24px);
+}
+
+.accordeon__item--active {
   &::before {
     content: "";
-    width: rem(630px);
+    width: rem(530px);
     height: 100%;
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background: #000;
-    opacity: .75;
+    background: #2f3234;
+    opacity: .93;
     transition: width cubic-bezier(.16,.14,.8,1.55) 1s;
   }
 }
 
 
-@keyframes accordion__description {
+@keyframes accordeon__desc {
   90% {
     opacity: 0;
   }

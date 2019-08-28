@@ -3,7 +3,15 @@
  **/
 
 html {
-  font-size: ($root-font-size / 16px) * 100%;
+  font-size: 16px;
+
+  @include tablets {
+    font-size: 15px;
+  }
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
  body, html {
@@ -35,11 +43,22 @@ ul {
 }
 
 .container {
-  // padding: 0 7.28%;
   width: auto;
   margin: 0 auto;
   max-width: rem(940px);
   min-height: 100%;
+
+  @media screen and (max-width: 980px) {
+    padding: 0 3%;
+  }
+
+  @include tablets{
+    padding: 0 7%;
+  }
+
+  @include phones{
+    padding: 0 7%;
+  }
 }
 
 p {

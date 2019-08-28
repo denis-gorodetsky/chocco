@@ -16,6 +16,14 @@
       margin-right: rem(4px);
     }
   }
+
+  @include tablets{
+    display: none;
+  }
+
+  @include phones{
+    display: none;
+  }
 }
 
 

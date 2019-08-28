@@ -1,20 +1,21 @@
 .fixed-nav {
   position: fixed;
-  top: 34%;
+  top: 35%;
   right: 5%;
-  z-index: 100;
+  z-index: $fixed-nav-z-index;
 }
 
-.fixed-nav__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.fixed-nav__item--active .fixed-nav__dot{
+  border-color: #fff;
 }
 
-.fixed-nav__item {
+.fixed-nav__dot {
+  width: rem(16px);
+  height: rem(16px);
+  border-radius: 50%;
+  border: rem(1px) solid transparent;
+  margin-bottom: rem(5px);
   position: relative;
-  display: block;
-  margin-bottom: rem(24px);
   cursor: pointer;
 
   &:last-child {
@@ -23,31 +24,18 @@
 
   &:before {
     content: "";
-    width: 0;
-    height: 0;
+    width: rem(6px);
+    height: rem(6px);
+    background: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: block;
     border-radius: 50%;
-    border: rem(3px) solid $white;
   }
 
-}
-
-.fixed-nav__item--active {
-  &:after {
-  content: "";
-  width: rem(16px);
-  height: rem(16px);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  border-radius: 50%;
-  transition: 0.3s;
-  border: rem(2px) solid $white;
+  &:hover {
+    border-color: $white;
   }
+
 }

@@ -1,0 +1,97 @@
+/* GENERAL STYLES */
+.hamburger-block {
+  display: none;
+
+  @include tablets{
+    display: flex;
+  }
+
+  @include phones{
+    display: flex;
+  }
+}
+
+.hamburger {
+  width: rem(25px);
+  height: rem(30px);
+  position: relative;
+}
+
+.hamburger .bar {
+  width: rem(25px);
+  height: rem(4px);
+  background-color: $white;
+  border-radius: rem(3px);
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: rem(9.5px);
+}
+
+.bar3 {
+  right: 0;
+}
+
+.bar4 {
+  bottom: 0;
+}
+
+/* HAMBURGER 4 */
+
+.hamburger2 .bar2,
+.hamburger3 .bar3,
+.hamburger4 .bar4 {
+  top: rem(9.5px);
+}
+
+.hamburger4 .bar5 {
+  bottom: rem(7px);
+}
+
+.hamburger4 .bar {
+  transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+}
+
+.hamburger4 .bar2 {
+  width: rem(1px);
+  transform: rotate(90deg);
+  left: rem(9.5px);
+}
+
+.hamburger4 .bar3 {
+  width: rem(1px);
+  left: rem(9.5px);
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar1{
+  top: rem(9.5px);
+  background-color: transparent;
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar2{
+  left: rem(0px);
+  width: rem(25px);
+  transform: rotate(45deg);
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar3{
+  left: 0;
+  width: rem(25px);
+  transform: rotate(-45deg);
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar4{
+  background-color: transparent;
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar5{
+  bottom: rem(9.5px);
+  background-color: transparent;
+}

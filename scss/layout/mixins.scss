@@ -9,3 +9,15 @@
 @function rem($size) {
   @return $size / $root-font-size * 1rem;
 }
+
+@mixin tablets() {
+  @media screen and (max-width: 868px) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
