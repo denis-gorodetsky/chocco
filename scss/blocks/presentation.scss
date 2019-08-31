@@ -1,15 +1,14 @@
 .presentation {
   display: flex;
-  justify-content: space-between;
   position: relative;
 
-  @include tablets{
+  @include tablets {
     flex-direction: column-reverse;
     align-items: center;
 
   }
 
-  @include phones{
+  @include phones {
     flex-direction: column-reverse;
   }
 }
@@ -19,11 +18,11 @@
   flex-direction: column;
   z-index: $presentation-text;
 
-  @include tablets{
+  @include tablets {
     align-items: center;
   }
 
-  @include phones{
+  @include phones {
     align-items: center;
   }
 
@@ -32,6 +31,16 @@
 .presentation__desc {
   width: 70%;
   padding-top: rem(85px);
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: rem(58px);
+    text-align: center;
+  }
+
+  @include phones {}
 }
 
 .presentation__title {
@@ -40,14 +49,28 @@
   text-transform: uppercase;
   line-height: 3.75rem;
   margin-bottom: rem(12px);
+
+  @include tablets {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: rem(10px);
+  }
+
+  @include phones {}
+
 }
 
 .presentation__text {
-  margin-bottom: rem(32px);
+  margin-bottom: rem(28px);
+
+  @include tablets {
+    margin-bottom: rem(40px);
+    width: 68%;
+  }
 }
 
 .presentation__text p {
-  font-size: 1.3125rem;
+  font-size: rem(21px);
   line-height: 1.5125rem;
   color: $white;
   font-weight: normal;
@@ -61,13 +84,13 @@
   margin-right: rem(-55px);
   margin-top: rem(-10px);
 
-  @include tablets{
+  @include tablets {
     width: 56%;
-    margin: 0;
-
+    margin-right: rem(35px);
+    margin-top: rem(-15px);
   }
 
-  @include phones{
+  @include phones {
     width: 100%;
     margin: 0;
   }
@@ -82,4 +105,10 @@
   &:hover {
     box-shadow: rem(0px) rem(8px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
   }
+
+  @include tablets {
+    margin-bottom: rem(45px);
+  }
+
+  @include phones {}
 }

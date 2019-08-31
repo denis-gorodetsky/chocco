@@ -1,12 +1,14 @@
 .map {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
   position: relative;
-  min-height: 100%;
+  overflow: auto;
+
 }
 
-.google-map {
-  width: 100%;
-  height: 100%;
+.map--google {
   background: url('../img/jpeg/map.jpg') center center no-repeat;
 }

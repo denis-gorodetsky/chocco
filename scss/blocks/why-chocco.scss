@@ -9,20 +9,7 @@
   position: absolute;
   left: 0;
   top: 12%;
-  display: block;
   background: url(../img/png/promo-pattern.png) no-repeat;
-  background-size: cover;
-}
-
-.why-chocco:after {
-  content: "";
-  width: 10.0625rem;
-  height: 18.25rem;
-  position: absolute;
-  left: 0;
-  top: 56%;
-  display: block;
-  background: url(../img/png/promo-raspberries.png) no-repeat;
   background-size: cover;
 }
 
@@ -35,6 +22,17 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: rem(58px);
+
+  @include tablets {
+  margin-bottom: rem(38px);
+  }
+}
+
+.why-chocco__title {
+  @include tablets {
+    font-size: 48px;
+    margin-bottom: 2px;
+  }
 }
 
 .why-chocco__desc {
@@ -43,4 +41,8 @@
   font-size: rem(18px);
   line-height: rem(21px);
   font-weight: normal;
+
+  @include tablets {
+    width: 60%;
+  }
 }

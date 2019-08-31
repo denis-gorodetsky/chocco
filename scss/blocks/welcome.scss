@@ -3,6 +3,10 @@
   color: $white;
   background-color: #61c4d9;
   margin-bottom: rem(100px);
+
+  @include tablets {
+    margin-bottom: rem(57px);
+  }
 }
 
 .welcome:after {
@@ -15,12 +19,15 @@
   z-index: $welcome-before-decor;
   background: url(../img/png/welcome-decor.png) center no-repeat;
 
-  @include tablets{
-    display: none;
+
+  @include tablets {
+    bottom: 31.3125rem;
+    background: url(../img/png/welcome-tablets-berries.png) center no-repeat;
   }
 
-  @include phones{
-    display: none;
+  @include phones {
+    bottom: 31.3125rem;
+    background: url(../img/png/welcome-tablets-berries.png) center no-repeat;
   }
 }
 
@@ -35,12 +42,12 @@
   background-image: url('../img/png/welcome-pattern.png');
   background-repeat: no-repeat;
 
-  @include tablets{
-    display: none;
+  @include tablets {
+    bottom: 37%;
   }
 
-  @include phones{
-    display: none;
+  @include phones {
+    bottom: 37%;
   }
 }
 
@@ -49,6 +56,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2.5%;
   z-index: $head-menu-z-index;
 }

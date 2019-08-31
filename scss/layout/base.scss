@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Alegreya Sans';
   line-height: 1.42;
   font-weight: 300;
   color: $darkest-color;
@@ -43,21 +43,24 @@ ul {
 }
 
 .container {
-  width: auto;
-  margin: 0 auto;
   max-width: rem(940px);
-  min-height: 100%;
+  height: 100%;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  @media screen and (max-width: 980px) {
-    padding: 0 3%;
-  }
+  // @media screen and (max-width: 980px) {
+  //   padding: 0 3%;
+  // }
 
   @include tablets{
-    padding: 0 7%;
+    padding: 0 5.1%;
   }
 
   @include phones{
-    padding: 0 7%;
+    padding: 0 5.1%;
   }
 }
 
@@ -113,5 +116,9 @@ footer {
   margin-top: auto;
   position: relative;
   width: 100%;
+}
+
+input, textarea {
+  border: 0;
 }
 

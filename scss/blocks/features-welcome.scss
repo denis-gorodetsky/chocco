@@ -5,6 +5,11 @@
 .features-welcome__item {
   display: flex;
   margin-right: rem(30px);
+
+  @include tablets {
+    margin-right: rem(80px);
+
+  }
 }
 
 .features-welcome__icon {
