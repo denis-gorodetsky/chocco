@@ -1,3 +1,164 @@
 .team__title {
-  margin-bottom: rem(44px);
+  margin-bottom: rem(24px);
+  font-size: 48px;
+
+  @include tablets {
+  margin-bottom: rem(40px);
+
+  }
+  @include phones {}
+}
+
+.team__container {
+  margin-top: 24px;
+  @include tablets {
+    max-width: 580px;
+  }
+  @include phones {
+    padding: 0 5%;
+  }
+}
+
+.team-accordeon {
+  display: flex;
+  margin-right: rem(-20px);
+  position: relative;
+  z-index: $team-accordeon-z-index;
+
+  @include tablets {
+    margin-right: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.team-accordeon__item {
+  width: calc(100% / 4 - 20px);
+  margin-right: rem(20px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablets {
+    width: calc(100%/2 - 20px);
+    margin-right: 20px;
+
+    &:nth-child(even) {
+      margin-top:0;
+      margin-right: 0;
+    }
+  }
+  @include phones {
+    margin-right: 30px;
+  }
+
+}
+
+.team-accordeon__img {
+  width: 100%;
+  height: 65%;
+  margin-bottom: rem(20px);
+
+  @include tablets {
+    height: 62%;
+  }
+}
+
+.team-accordeon__pic {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.team-accordeon__text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.team-accordeon__name {
+  position: relative;
+  font-size: rem(21px);
+  font-weight: 500;
+  align-self: center;
+  cursor: pointer;
+  color: #323232;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    right: -12%;
+    transform: translateY(-50%);
+    transition: 0.2s ease-in;
+    border: rem(5px) solid #0f5a47;
+    border-bottom: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    @include phones {
+      border-width: 3px;
+    }
+  }
+
+  @include phones {
+    font-size: 1em;
+  }
+}
+
+.team-accordeon__job {
+  height: 0;
+  min-height: rem(25px);
+  overflow: hidden;
+  cursor: default;
+  font-size: rem(18px);
+  font-weight: normal;
+  color: #281e1e;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+
+  @include tablets {
+  }
+  @include phones {
+    font-size: 0.9em;
+  }
+}
+
+.team-accordeon__desc {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  font-size: rem(18px);
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+
+  @include tablets {
+  }
+  @include phones {
+    font-size: 0.8em;
+  }
+}
+
+.team-accordeon__item--active .team-accordeon__name:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: -12%;
+  transform: translateY(-50%);
+  border: rem(5px) solid #0f5a47;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.team-accordeon__item--active .team-accordeon__name~div.team-accordeon__job,
+.team-accordeon__item--active .team-accordeon__name~p.team-accordeon__desc {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
 }

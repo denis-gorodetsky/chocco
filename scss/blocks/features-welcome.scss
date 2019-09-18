@@ -1,13 +1,23 @@
 .features-welcome {
   display: flex;
+  width: 53%;
+  justify-content: space-between;
+  margin-bottom: rem(40px);
+
+  @include tablets {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0 5%;
+  margin-bottom: rem(60px);
+
+  }
+  @include phones {}
 }
 
 .features-welcome__item {
   display: flex;
-  margin-right: rem(30px);
 
   @include tablets {
-    margin-right: rem(80px);
 
   }
 }

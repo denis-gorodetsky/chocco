@@ -26,4 +26,14 @@
   }
 }
 
+.phone--footer {
+  @include tablets {
+    display: flex;
+  }
+  @include phones {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 

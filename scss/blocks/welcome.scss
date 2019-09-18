@@ -2,11 +2,12 @@
   position: relative;
   color: $white;
   background-color: #61c4d9;
-  margin-bottom: rem(100px);
+  // margin-bottom: rem(100px);
 
-  @include tablets {
-    margin-bottom: rem(57px);
-  }
+}
+
+.welcome__container {
+  justify-content: flex-start;
 }
 
 .welcome:after {
@@ -18,16 +19,20 @@
   right: 0;
   z-index: $welcome-before-decor;
   background: url(../img/png/welcome-decor.png) center no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   @include tablets {
-    bottom: 31.3125rem;
+    bottom: 38.3125rem;
     background: url(../img/png/welcome-tablets-berries.png) center no-repeat;
   }
 
   @include phones {
-    bottom: 31.3125rem;
+    bottom: 50%;
     background: url(../img/png/welcome-tablets-berries.png) center no-repeat;
+    background-size: 68%;
   }
 }
 
@@ -36,14 +41,14 @@
   width: 32rem;
   height: 40.5rem;
   position: absolute;
-  right: 0%;
-  bottom: 0%;
+  right: 0;
+  bottom: 0;
   background-size: cover;
   background-image: url('../img/png/welcome-pattern.png');
   background-repeat: no-repeat;
 
   @include tablets {
-    bottom: 37%;
+    bottom: 42%;
   }
 
   @include phones {
@@ -57,4 +62,5 @@
   justify-content: space-between;
   align-items: center;
   z-index: $head-menu-z-index;
+  padding-top: rem(18px);
 }

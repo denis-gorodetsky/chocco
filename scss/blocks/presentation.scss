@@ -1,46 +1,23 @@
 .presentation {
   display: flex;
-  position: relative;
-
-  @include tablets {
-    flex-direction: column-reverse;
-    align-items: center;
-
-  }
-
-  @include phones {
-    flex-direction: column-reverse;
-  }
-}
-
-.presentation__block {
-  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  position: relative;
+  width: 70%;
   z-index: $presentation-text;
+  margin-top: -1%;
 
   @include tablets {
+    width: 100%;
+    text-align: center;
     align-items: center;
   }
 
   @include phones {
-    align-items: center;
+    justify-content: flex-start;
   }
-
-}
-
-.presentation__desc {
-  width: 70%;
-  padding-top: rem(85px);
-
-  @include tablets {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: rem(58px);
-    text-align: center;
-  }
-
-  @include phones {}
 }
 
 .presentation__title {
@@ -48,24 +25,35 @@
   font-weight: bold;
   text-transform: uppercase;
   line-height: 3.75rem;
-  margin-bottom: rem(12px);
+  margin-bottom: 2%;
 
   @include tablets {
     font-size: 60px;
     line-height: 60px;
-    margin-bottom: rem(10px);
+    margin-bottom: 2%;
   }
 
-  @include phones {}
+  @include phones {
+    font-size: 45px;
+    line-height: 40px;
+    margin-bottom: 2%;
+  }
 
 }
 
 .presentation__text {
-  margin-bottom: rem(28px);
+    margin-bottom: 3%;
+    width: 56%;
+
 
   @include tablets {
-    margin-bottom: rem(40px);
-    width: 68%;
+    margin-bottom: 5%;    ;
+    width: 45%;
+  }
+
+  @include phones {
+    width: 75%;
+
   }
 }
 
@@ -78,36 +66,47 @@
 }
 
 .presentation__img {
-  position: relative;
+  position: absolute;
   z-index: $presentation-img;
-  width: 125%;
-  margin-right: rem(-55px);
-  margin-top: rem(-10px);
+  width: 55%;
+  left: 50%;
+  top: 8%;
 
   @include tablets {
-    width: 56%;
-    margin-right: rem(35px);
-    margin-top: rem(-15px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: -1.5%;
+    top: -1.5%;
+
   }
 
   @include phones {
-    width: 100%;
-    margin: 0;
+    left: -1.5%;
+    top: -6%;
+  }
+
+}
+
+.presentation__pic {
+  @include tablets {
+    width: rem(430px);
+  }
+
+  @include phones {
+    width: rem(360px);
   }
 }
 
 .presentation__button {
   color: #0f5a47;
-  background-color: #fff;
+  background-color: $white;
   transition: 0.2s;
-  margin-bottom: rem(68px);
-
-  &:hover {
-    box-shadow: rem(0px) rem(8px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
-  }
+  // margin-bottom: rem(10px);
 
   @include tablets {
-    margin-bottom: rem(45px);
+    margin-bottom: 5%;
   }
 
   @include phones {}

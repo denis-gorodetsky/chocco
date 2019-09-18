@@ -28,8 +28,6 @@
     @include tablets {
       background-image: none;
     }
-
-    @include phones {}
   }
 
   &:last-child:after {
@@ -39,7 +37,27 @@
   @include tablets {
     margin-bottom: rem(30px);
   }
-  @include phones {}
+
+  @include phones {
+    @include phones {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+.features__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablets {}
+  @include phones {
+  align-items: flex-start;
+  width: 75%;
+  }
 }
 
 .features__icon {
@@ -61,6 +79,12 @@
   &--muscle {
     background-image: url('../img/icons/2.svg');
   }
+
+  @include tablets {}
+  @include phones {
+    margin: 0;
+    margin-right: 15px;
+  }
 }
 
 .features__title {
@@ -71,11 +95,12 @@
   @include tablets {
     margin-bottom: rem(6px);
   }
+
   @include phones {}
 }
 
 .features__text {
-  width: 85%;
+  width: 90%;
   font-size: rem(18px);
   line-height: rem(22px);
   text-align: center;
@@ -83,5 +108,9 @@
   @include tablets {
     width: rem(390px);
   }
-  @include phones {}
+
+  @include phones {
+  width: 80%;
+  text-align: left;
+  }
 }

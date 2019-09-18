@@ -1,12 +1,19 @@
-.fixed-nav {
+.fixed-nav__list {
   position: fixed;
   top: 35%;
   right: 5%;
   z-index: $fixed-nav-z-index;
+
+  @include tablets {
+    display: none;
+  }
+  @include phones {
+    display: none;
+  }
 }
 
 .fixed-nav__item--active .fixed-nav__dot{
-  border-color: #fff;
+  border-color: $fixed-nav-color;
 }
 
 .fixed-nav__dot {
@@ -17,6 +24,7 @@
   margin-bottom: rem(5px);
   position: relative;
   cursor: pointer;
+  transition: 0.2s;
 
   &:last-child {
     margin-bottom: 0;
@@ -26,7 +34,7 @@
     content: "";
     width: rem(6px);
     height: rem(6px);
-    background: #fff;
+    background: $fixed-nav-color;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,7 +43,7 @@
   }
 
   &:hover {
-    border-color: $white;
+    border-color: $fixed-nav-color;
   }
 
 }

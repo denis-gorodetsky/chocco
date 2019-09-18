@@ -2,6 +2,7 @@
 .hamburger-block {
   display: none;
 
+
   @include tablets{
     display: flex;
   }
@@ -14,13 +15,16 @@
 .hamburger {
   width: rem(25px);
   height: rem(30px);
-  position: relative;
+  position: fixed;
+  top: 4%;
+  right: 7.5%;
+  z-index: 200;
 }
 
 .hamburger .bar {
   width: rem(25px);
   height: rem(4px);
-  background-color: $white;
+  background-color: $fixed-nav-color;
   border-radius: rem(3px);
   transition: all 0.4s ease-in-out;
   position: absolute;

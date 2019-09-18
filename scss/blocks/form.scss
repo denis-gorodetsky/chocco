@@ -3,6 +3,7 @@
   background: #cfdeda;
   color: #0f5a47;
   background: url("../img/png/form-pattern.png");
+
   &::before {
     content: "";
     width: rem(197px);
@@ -11,14 +12,29 @@
     top: -24%;
     right: 0;
     display: block;
-    background: url("../img/png/form-blackberry.png");
+    background: url("../img/png/form-blackberry.png") no-repeat;
     background-size: cover;
+
+    @include tablets {
+      top: -18%;
     }
 
+    @include phones {
+      top: -10%;
+      width: rem(107px);
+      height: rem(174px);
+    }
+  }
+
+  @include phones {
+    min-height: rem(480px);
+  }
 }
+
 
 .form-section__container {
   position: relative;
+
   &:before {
     content: "";
     width: rem(1085px);
@@ -29,14 +45,32 @@
     display: block;
     background: url("../img/png/form-blueberry.png") no-repeat;
     background-size: cover;
+    @include phones {
+    background: none;
+
+    }
+  }
+
+  @include tablets {
+    max-width: 550px;
+  }
+
+  @include phones {
+    width: 100%;
   }
 
 }
 
 .form-section__title {
-  padding-top: rem(68px);
-  margin-bottom: rem(38px);
+  margin-bottom: rem(30px);
   position: relative;
+  white-space: nowrap;
+
+  @include phones {
+    font-size: 40px;
+    margin: 0;
+    white-space: normal;
+  }
 }
 
 .form {
@@ -53,23 +87,39 @@
   display: flex;
   justify-content: space-between;
 
+  @include tablets {
+    margin-bottom: 7%;
+    flex-direction: column;
+  }
 }
 
 .form__block {
   width: 48.94%;
   display: flex;
   flex-direction: column;
+
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .form__row {
   display: flex;
   justify-content: space-between;
   margin-bottom: rem(15px);
+
+  @include tablets {
+    margin-bottom: 3%;
+  }
+
+  @include phones {
+    margin-bottom: 2%;
+  }
+
 }
 
 .form__row:last-child {
   margin-bottom: 0;
-
 }
 
 .form-titles {
@@ -82,11 +132,15 @@
   width: 100%;
 }
 
-.form__name, .form__phone {
+.form__name,
+.form__phone {
   width: 47.83%;
 }
 
-.form__home, .form__build, .form__flat, .form__floor {
+.form__home,
+.form__build,
+.form__flat,
+.form__floor {
   width: 21.74%;
 }
 
@@ -96,12 +150,14 @@
   padding-left: 2.4%;
   border: rem(3px) solid transparent;
   transition: 0.2s;
+
   &:focus {
     border: rem(3px) solid #dde3bd;
   }
 }
 
-.form__name-input, .form__phone-input {
+.form__name-input,
+.form__phone-input {
   padding-left: 5%;
 }
 
@@ -109,7 +165,10 @@
   font-family: "Open sans";
 }
 
-.form__home-input, .form__build-input, .form__flat-input, .form__floor-input {
+.form__home-input,
+.form__build-input,
+.form__flat-input,
+.form__floor-input {
   padding-left: 11%;
 }
 
@@ -119,10 +178,24 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @include tablets {
+    width: 100%;
+  }
 }
 
 .form__comments {
   width: 100%;
+
+  @include tablets {
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+  }
+
+  @include phones {
+    margin-bottom: 10px;
+  }
+
 }
 
 .form__comments-textarea {
@@ -131,6 +204,7 @@
   border: rem(3px) solid transparent;
   resize: none;
   transition: 0.2s;
+
   &:focus {
     border: rem(3px) solid #dde3bd;
   }
@@ -139,9 +213,20 @@
 .form__radio-block {
   display: flex;
   padding-top: rem(8px);
+
+  @include tablets {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  @include phones {
+    margin-bottom: 15px;
+
+  }
 }
 
-.form__change, .form__card {
+.form__change,
+.form__card {
   display: flex;
   align-items: center;
 }
@@ -154,7 +239,8 @@
   display: none;
 }
 
-.form__change-div, .form__card-div {
+.form__change-div,
+.form__card-div {
   width: rem(26px);
   height: rem(26px);
   margin-right: rem(9px);
@@ -164,7 +250,7 @@
   flex-shrink: 0;
 }
 
-.form__change-input:checked + .form__change-div::before {
+.form__change-input:checked+.form__change-div::before {
   content: "";
   width: 0;
   height: 0;
@@ -176,9 +262,13 @@
   border: rem(7px) solid;
   border-radius: 50%;
 
+  @include phones {
+    border-width: 4px;
+  }
+
 }
 
-.form__card-input:checked + .form__card-div::before {
+.form__card-input:checked+.form__card-div::before {
   content: "";
   width: 0;
   height: 0;
@@ -189,7 +279,19 @@
   transform: translate(-50%, -50%);
   border: rem(7px) solid;
   border-radius: 50%;
+
+  @include phones {
+    border-width: 4px;
+  }
 }
+
+.form__check-block {
+  @include tablets {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
 .form-checkbox {
   display: none;
@@ -208,7 +310,7 @@
   position: relative;
 }
 
-.form__call-input:checked + div.form__call-div::before {
+.form__call-input:checked+span.form__call-div::before {
   content: "";
   width: rem(8px);
   height: rem(2px);
@@ -225,6 +327,13 @@
 .form__button-block {
   width: 48.94%;
   position: relative;
+
+  @include tablets {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .form__refresh {
@@ -243,8 +352,4 @@
   color: #fff;
   margin-right: rem(26px);
   transition: .2s;
-
-  &:hover {
-    box-shadow: rem(0px) rem(8px) rem(25px) rem(0px) rgba(0, 0, 0, .35);
-  }
 }

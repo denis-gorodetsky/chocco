@@ -11,13 +11,13 @@
 }
 
 @mixin tablets() {
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 890px) {
     @content;
   }
 }
 
 @mixin phones() {
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 580px) {
     @content;
   }
 }

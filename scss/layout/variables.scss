@@ -2,10 +2,11 @@ $white: #fff;
 $p-color: #666666;
 $darkest-color: #0d0d0d;
 $popup-text-color: #333333;
+$fixed-nav-color: #e4e7cc;
 
 $root-font-size: 16px;
 
-// z-indexes
+// ! z-indexes
 
 $fixed-nav-z-index: 1000;
 
@@ -21,6 +22,9 @@ $presentation-img: 10;
 $menu-z-index: 10;
 $menu-accordeon-desc-z-index: 50;
 
+// team
+
+$team-accordeon-z-index: 30;
 
 
 
