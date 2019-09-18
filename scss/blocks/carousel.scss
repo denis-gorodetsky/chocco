@@ -1,0 +1,52 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  margin-left: rem(15px);
+}
+
+.carousel__item {
+  width: rem(68px);
+  height: rem(68px);
+  cursor: pointer;
+  border: rem(7px) solid transparent;
+  border-radius: 50%;
+  box-sizing: content-box;
+
+  &--active {
+    border: rem(7px) solid #0f5a47;
+
+    @include tablets {
+      border: rem(10px) solid #0f5a47;
+
+    }
+
+    @include phones {}
+  }
+
+  @include tablets {
+    width: rem(85px);
+    height: rem(85px);
+    margin-right: rem(35px);
+
+  }
+
+  @include phones {}
+}
+
+.carousel__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: rem(68px);
+  max-height: rem(68px);
+  border-radius: 50%;
+
+  @include tablets {
+    width: 120%;
+    height: 120%;
+    max-width: rem(85px);
+    max-height: rem(85px);
+  }
+
+  @include phones {}
+}

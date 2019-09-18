@@ -1,0 +1,20 @@
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.button {
+  padding: rem(18px) rem(38px);
+  background-color: #0b4d3c;
+  border-radius: rem(40px) rem(40px);
+  font-size: 1.1875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  &:hover {
+    box-shadow: rem(0px) rem(8px) rem(20px) rem(0px) rgba(0, 0, 0, .35);
+  }
+}

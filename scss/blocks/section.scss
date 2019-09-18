@@ -1,0 +1,13 @@
+.section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include tablets {
+    // min-height: 1094px;
+  }
+  @include phones {
+    // min-height: 900px;
+  }
+}

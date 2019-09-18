@@ -1,4 +1,73 @@
-.footer__section {
-  display: flex;
-  justify-content: space-between;
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  padding: 10px 0;
 }
+
+.footer__container {
+  max-width: rem(940px);
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  @include tablets {}
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.footer__row {
+  width: 50%;
+  display: flex;
+
+  @include tablets {}
+  @include phones {
+   justify-content: center;
+   width: 80%;
+  }
+}
+
+.footer__row--right {
+  justify-content: flex-end;
+
+  @include tablets {}
+  @include phones {
+    justify-content: center;
+  }
+}
+
+.address {
+  color: #0f5a47;
+}
+
+.address__text {
+  font-size: rem(21px);
+  font-weight: 400;
+  line-height: rem(24px);
+}
+
+.phone__link--footer {
+  color: #0f5a47;
+  font-size: rem(21px);
+
+  &:before {
+    content: url('../img/png/phone-black.png');
+    width: rem(12px);
+    height: rem(11px);
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 60%;
+
+  @include tablets {}
+  @include phones {
+  width: 100%;
+  }
+}
+

@@ -1,0 +1,68 @@
+.why-chocco {
+  position: relative;
+}
+
+.why-chocco:before {
+  content: "";
+  width: 11.9375rem;
+  height: 19.625rem;
+  position: absolute;
+  left: 0;
+  top: 12%;
+  background: url(../img/png/promo-pattern.png) no-repeat;
+  background-size: cover;
+
+  @include tablets {
+  background: none;
+
+  }
+  @include phones {}
+}
+
+.why-chocco__container {
+  max-width: 64.375rem;
+  @include tablets {
+  padding: 0;
+  }
+  @include phones {}
+}
+
+.why-chocco__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: rem(58px);
+
+  @include tablets {
+  margin-bottom: rem(38px);
+  }
+
+}
+
+.why-chocco__title {
+  @include tablets {
+    font-size: 48px;
+    margin-bottom: 2px;
+  }
+
+  @include phones {
+    font-size: 40px;
+  }
+}
+
+.why-chocco__desc {
+  width: 45%;
+  text-align: center;
+  font-size: rem(18px);
+  line-height: rem(21px);
+  font-weight: normal;
+
+  @include tablets {
+    width: 60%;
+  }
+
+  @include phones {
+    width: 95%;
+
+  }
+}

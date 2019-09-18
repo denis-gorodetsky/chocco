@@ -5,3 +5,19 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
+@function rem($size) {
+  @return $size / $root-font-size * 1rem;
+}
+
+@mixin tablets() {
+  @media screen and (max-width: 890px) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: 580px) {
+    @content;
+  }
+}

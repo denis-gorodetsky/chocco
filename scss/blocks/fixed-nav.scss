@@ -1,0 +1,49 @@
+.fixed-nav__list {
+  position: fixed;
+  top: 35%;
+  right: 5%;
+  z-index: $fixed-nav-z-index;
+
+  @include tablets {
+    display: none;
+  }
+  @include phones {
+    display: none;
+  }
+}
+
+.fixed-nav__item--active .fixed-nav__dot{
+  border-color: $fixed-nav-color;
+}
+
+.fixed-nav__dot {
+  width: rem(16px);
+  height: rem(16px);
+  border-radius: 50%;
+  border: rem(1px) solid transparent;
+  margin-bottom: rem(5px);
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    content: "";
+    width: rem(6px);
+    height: rem(6px);
+    background: $fixed-nav-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &:hover {
+    border-color: $fixed-nav-color;
+  }
+
+}

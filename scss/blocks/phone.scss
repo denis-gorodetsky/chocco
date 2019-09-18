@@ -5,28 +5,34 @@
 
   &__link {
     color: $white;
-    text-decoration: none;
-    font-size: 24px;
+    font-size: rem(24px);
     font-weight: normal;
+    white-space: nowrap;
 
     &:before {
-      content: url('/img/png/phone.png');
-      width: 12px;
-      height: 11px;
-      margin-right: 5px;
+      content: url('../img/png/phone.png');
+      width: rem(12px);
+      height: rem(11px);
+      margin-right: rem(4px);
     }
+  }
+
+  @include tablets{
+    display: none;
+  }
+
+  @include phones{
+    display: none;
   }
 }
 
-
-.phone__link--footer {
-  color: #0f5a47;
-  font-size: 21px;
-
-  &:before {
-    content: url('/img/png/phone-black.png');
-    width: 12px;
-    height: 11px;
+.phone--footer {
+  @include tablets {
+    display: flex;
+  }
+  @include phones {
+    display: flex;
+    justify-content: center;
   }
 }
 

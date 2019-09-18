@@ -1,0 +1,14 @@
+.map {
+  // display: flex;
+  // flex-direction: column;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  position: relative;
+  overflow: auto;
+
+}
+
+.map--google {
+  background: url('../img/jpeg/map.jpg') center center no-repeat;
+}

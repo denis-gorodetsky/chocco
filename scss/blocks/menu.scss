@@ -1,16 +1,279 @@
 .menu {
+  position: relative;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  background-image: url("../img/jpeg/menu-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  z-index: $menu-z-index;
 
-  &__link {
-    font-size: 18px;
-    line-height: 30px;
-    text-decoration: none;
-    color: $white;
-    font-weight: normal;
-    margin: 0 15px;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .20;
+  }
+
+  &:after {
+    content: "";
+    width: rem(104px);
+    height: rem(114px);
+    position: absolute;
+    top: -11%;
+    left: 4%;
+    background: url("../img/png/menu-raspberries.png") no-repeat;
+    z-index: 60;
+
+    @include tablets {
+    top: -7%;
+    }
+
+    @include phones {
+      top: -5%;
+      left: 2%;
+      background-size: 80%;
+    }
+  }
+
+}
+
+.menu__title {
+  position: absolute;
+  top: 15%;
+  left: 7%;
+  color: inherit;
+  display: flex;
+
+  @include tablets {}
+
+  @include phones {}
+}
+
+.accordeon__list {
+  display: flex;
+  color: inherit;
+  position: relative;
+
+  @include tablets {
+    position: relative;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  @include phones {
+    position: static;
+
   }
 }
 
+.accordeon__item {
+  display: flex;
+  overflow: hidden;
+}
 
+.accordeon__box {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% center;
+  min-width: rem(100px);
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .40;
+    display: flex;
+  }
+
+  @include tablets {}
+
+  @include phones {
+    min-width: rem(80px);
+  }
+}
+
+.accordeon__item--active .accordeon__box {
+  @include tablets {
+    z-index: 50;
+  }
+  @include phones {
+  }
+}
+
+.accordeon__subtitle {
+  font-size: rem(48px);
+  font-weight: 500;
+  position: absolute;
+  bottom: 6.3%;
+  left: 30%;
+  transform: rotate(180deg) translateX(25%);
+  color: inherit;
+  writing-mode: vertical-rl;
+
+  @include tablets {}
+
+  @include phones {
+    font-size: rem(36px);
+
+  }
+}
+
+.accordeon__desc {
+  position: relative;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #fff;
+  transition: width 0.2s;
+  z-index: $menu-accordeon-desc-z-index;
+  font-size: 16px;
+}
+
+.accordeon__item--active .accordeon__desc {
+  width: 24.875rem;
+  padding: rem(48px) rem(26px);
+  animation: accordeon__desc .2s ease-in-out forwards;
+  transition: width 0.2s;
+
+  &::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2f3234;
+    opacity: .93;
+    transition: width 0.2s;
+    z-index: -10;
+  }
+
+  @include phones {
+    height: 100vh;
+  }
+}
+
+.accordeon__desc p {
+  color: inherit;
+  line-height: rem(24px);
+
+  @include tablets {
+    // width: 100%;
+    z-index: 50;
+  }
+
+  @include phones {}
+}
+
+.accordeon__item--active .accordeon__desc {
+
+}
+
+// .accordeon__item--active {
+//   display: flex;
+//   flex: 1;
+
+//   &::before {
+//     content: "";
+//     width: rem(530px);
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     background: #2f3234;
+//     opacity: .93;
+//     transition: width 0.2s;
+
+//     @include tablets {
+//       width: 100%;
+//     }
+//     @include phones {
+//       z-index: 30;
+//       width: 100%;
+//     }
+//   }
+
+//   @include tablets {}
+
+//   @include phones {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//   }
+
+// }
+
+
+@keyframes accordeon__desc {
+  90% {
+    opacity: 0;
+  }
+
+  95% {
+    opacity: .75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cross {
+  opacity: 1;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.accordeon__item--active .accordeon__desc .cross {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 18px;
+  height: 18px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+
+  @include tablets {
+    display: block;
+  }
+
+  @include phones {}
+}
+
+.accordeon__item--active .accordeon__desc .cross__left,
+.accordeon__item--active .accordeon__desc .cross__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 4px;
+  background: gray;
+  border-radius: 4px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position: absolute;
+}
+
+.accordeon__item--active .accordeon__desc .cross__right {
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
