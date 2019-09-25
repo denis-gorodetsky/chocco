@@ -9,10 +9,10 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const pngquant = require('imagemin-pngquant');
 const run = require('run-sequence');
 const del = require('del');
-const svgo = require('gulp-svgo');
+// const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
-// const svgmin = require('gulp-svgmin');
-// const cheerio = require('gulp-cheerio');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 
 gulp.task('sass', function () {
@@ -93,51 +93,54 @@ gulp.task('images', function () {
     .pipe(gulp.dest('build/img'));
 });
 
-// gulp.task('svg', function () {
-//   return gulp.src('img/**/*.svg')
-//       .pipe(svgmin({
-//         js2svg: {
-//           pretty: true
-//         }
-//       }))
-//       .pipe(cheerio({
-//         run: function ($) {
-//           $('[fill]').removeAttr('fill');
-//           $('[stroke]').removeAttr('stroke');
-//           $('[style]').removeAttr('style');
-//         },
-//         parserOptions: {xmlMode: true}
-//       }))
-//       .pipe(replace('&gt;', '>'))
-//       // build svg sprite
-//       .pipe(svgSprite({
-//         mode: {
-//           symbol: {
-//             sprite: "sprite.svg"
-//           }
-//         }
-//       }))
-//       .pipe(gulp.dest('build/img'));
-// });
-
 gulp.task('svg', function () {
-  return gulp.src(`img/svg/*.svg`)
-    .pipe(svgo({
-      plugins: [{
-        removeAttrs: {
-          attrs: '(fill|stroke|style|width|height|data.*)'
+  return gulp.src('img/**/*.svg')
+      .pipe(svgmin({
+        js2svg: {
+          pretty: true
         }
-      }]
-    }))
-    .pipe(svgSprite({
-      mode: {
-        symbol: {
-          sprite: '../sprite.svg'
+      }))
+      .pipe(cheerio({
+        run: function ($) {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+          // $('[width]').removeAttr('width');
+          // $('[height]').removeAttr('height');
+          // $('[data]').removeAttr('data.*');
+        },
+        parserOptions: {xmlMode: true}
+      }))
+      .pipe(replace('&gt;', '>'))
+      // build svg sprite
+      .pipe(svgSprite({
+        mode: {
+          symbol: {
+            sprite: "../sprite.svg"
+          }
         }
-      }
-    }))
-    .pipe(gulp.dest(`build/img/svg`));
+      }))
+      .pipe(gulp.dest('build/img/svg'));
 });
+
+// gulp.task('svg', function () {
+//   return gulp.src(`img/**/*.svg`)
+//     .pipe(svgo({
+//       plugins: [{
+//         removeAttrs: {
+//           attrs: '(fill|stroke|style|width|height|data.*)'
+//         }
+//       }]
+//     }))
+//     .pipe(svgSprite({
+//       mode: {
+//         symbol: {
+//           sprite: '../sprite.svg'
+//         }
+//       }
+//     }))
+//     .pipe(gulp.dest(`build/img/svg`));
+// });
 
 gulp.task('serve', function () {
   browserSync.init({
