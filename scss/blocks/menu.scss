@@ -30,7 +30,7 @@
     z-index: 60;
 
     @include tablets {
-    top: -7%;
+      top: -7%;
     }
 
     @include phones {
@@ -107,8 +107,8 @@
   @include tablets {
     z-index: 50;
   }
-  @include phones {
-  }
+
+  @include phones {}
 }
 
 .accordeon__subtitle {
@@ -144,7 +144,7 @@
 .accordeon__item--active .accordeon__desc {
   width: 24.875rem;
   padding: rem(48px) rem(26px);
-  animation: accordeon__desc .2s ease-in-out forwards;
+  animation: accordeon__desc .0s ease-in-out forwards;
   transition: width 0.2s;
 
   &::before {
@@ -170,53 +170,42 @@
   line-height: rem(24px);
 
   @include tablets {
-    // width: 100%;
     z-index: 50;
   }
-
-  @include phones {}
 }
 
-.accordeon__item--active .accordeon__desc {
+@include phones {
 
+  .accordeon__item--active {
+    display: flex;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &::before {
+      content: "";
+      width: rem(530px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #2f3234;
+      opacity: .93;
+      transition: width 0.2s;
+
+      @include tablets {
+        width: 100%;
+      }
+
+      @include phones {
+        z-index: 30;
+      }
+    }
+  }
 }
-
-// .accordeon__item--active {
-//   display: flex;
-//   flex: 1;
-
-//   &::before {
-//     content: "";
-//     width: rem(530px);
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     background: #2f3234;
-//     opacity: .93;
-//     transition: width 0.2s;
-
-//     @include tablets {
-//       width: 100%;
-//     }
-//     @include phones {
-//       z-index: 30;
-//       width: 100%;
-//     }
-//   }
-
-//   @include tablets {}
-
-//   @include phones {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//   }
-
-// }
-
 
 @keyframes accordeon__desc {
   90% {
