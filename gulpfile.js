@@ -105,9 +105,6 @@ gulp.task('svg', function () {
           $('[fill]').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
           $('[style]').removeAttr('style');
-          // $('[width]').removeAttr('width');
-          // $('[height]').removeAttr('height');
-          // $('[data]').removeAttr('data.*');
         },
         parserOptions: {xmlMode: true}
       }))
@@ -122,25 +119,6 @@ gulp.task('svg', function () {
       }))
       .pipe(gulp.dest('build/img/svg'));
 });
-
-// gulp.task('svg', function () {
-//   return gulp.src(`img/**/*.svg`)
-//     .pipe(svgo({
-//       plugins: [{
-//         removeAttrs: {
-//           attrs: '(fill|stroke|style|width|height|data.*)'
-//         }
-//       }]
-//     }))
-//     .pipe(svgSprite({
-//       mode: {
-//         symbol: {
-//           sprite: '../sprite.svg'
-//         }
-//       }
-//     }))
-//     .pipe(gulp.dest(`build/img/svg`));
-// });
 
 gulp.task('serve', function () {
   browserSync.init({

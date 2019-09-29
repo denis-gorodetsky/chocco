@@ -37,12 +37,11 @@
   z-index: 20;
 
   @include tablets {
-    bottom: 0;
-
+    bottom: -10%;
   }
 
   @include phones {
-    bottom: -15%;
+    bottom: -12%;
   }
 }
 
