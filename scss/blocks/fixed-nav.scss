@@ -7,43 +7,43 @@
   @include tablets {
     display: none;
   }
-  @include phones {
-    display: none;
-  }
 }
 
-.fixed-nav__item--active .fixed-nav__dot{
-  border-color: $fixed-nav-color;
-}
-
-.fixed-nav__dot {
-  width: rem(16px);
-  height: rem(16px);
+.fixed-nav__item {
+  margin-bottom: 2px;
+  border: 0.0625rem solid transparent;
   border-radius: 50%;
-  border: rem(1px) solid transparent;
-  margin-bottom: rem(5px);
-  position: relative;
-  cursor: pointer;
-  transition: 0.2s;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  transition: 0.1s;
 
   &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:before {
-    content: "";
-    width: rem(6px);
-    height: rem(6px);
-    background: $fixed-nav-color;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+    margin: 0;
   }
 
   &:hover {
     border-color: $fixed-nav-color;
   }
+}
 
+.fixed-nav__list .fixed-nav__item--active {
+  border-color: $fixed-nav-color;
+}
+
+.fixed-nav__dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(16px);
+  height: rem(16px);
+
+  &:before {
+    content: "";
+    display: flex;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    width: rem(6px);
+    height: rem(6px);
+    background: $fixed-nav-color;
+  }
 }

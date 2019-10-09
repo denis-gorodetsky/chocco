@@ -14,15 +14,37 @@
   z-index: 40;
 
   @include tablets {
-  top: 3%;
+    top: 3%;
 
   }
+
   @include phones {
-  top: 2%;
-  right: -5%;
+    top: 2%;
+    right: -5%;
 
   }
 }
+
+.reviews:after {
+  content: "";
+  width: 6.875rem;
+  height: 16.125rem;
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  background: url('/img/png/reviews-decor.png') center no-repeat;
+  background-size: cover;
+  z-index: 20;
+
+  @include tablets {
+    bottom: -10%;
+  }
+
+  @include phones {
+    bottom: -12%;
+  }
+}
+
 
 
 .reviews__container {
@@ -81,11 +103,11 @@
       }
     }
 
-  @include phones {
-    width: 99%;
-    padding: 35px 0px;
-    justify-content: center;
-  }
+    @include phones {
+      width: 99%;
+      padding: 35px 0px;
+      justify-content: center;
+    }
 
     &::after {
       content: "";
@@ -112,10 +134,11 @@
   background-color: #fff;
 
   @include tablets {
-  top: -6%;
+    top: -6%;
 
-  left: 43.5%;
+    left: 43.5%;
 
   }
+
   @include phones {}
 }

@@ -51,6 +51,16 @@
   }
 }
 
+.slider {
+  overflow: hidden;
+
+  @include tablets {
+  // overflow: visible;
+  }
+  @include phones {
+  }
+}
+
 .arrow {
   width: rem(22px);
   height: rem(22px);
@@ -62,7 +72,8 @@
   border-radius: rem(5px);
   border-top-color: transparent;
   border-right-color: transparent;
-  z-index: 0;
+  padding: 10px;
+  z-index: 40;
 
   @include tablets {
     top: 30%;
@@ -72,7 +83,6 @@
 .arrow--left {
   left: 0.5%;
   transform: rotate(45deg);
-  z-index: 40;
 
   @include tablets {
     left: 15.5%;
@@ -105,6 +115,8 @@
   position: relative;
   top: 0;
   right: 0;
+  transition: 0.2s;
+
 }
 
 .product-list__item {
@@ -134,7 +146,8 @@
 
   @include tablets {
     width: 100%;
-    margin-bottom: 11%;
+    margin-bottom: 8%;
+    padding-top: 8%;
     display: flex;
     justify-content: center;
   }

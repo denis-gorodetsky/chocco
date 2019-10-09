@@ -10,7 +10,6 @@
 }
 
 .team__container {
-  margin-top: 24px;
   @include tablets {
     max-width: 580px;
   }
@@ -118,7 +117,7 @@
   font-weight: normal;
   color: #281e1e;
   opacity: 0;
-  transition: opacity 0.2s ease-in;
+  transition: opacity 0.1s ease-in;
 
   @include tablets {
   }
@@ -134,7 +133,7 @@
   font-size: rem(18px);
   font-weight: 300;
   opacity: 0;
-  transition: opacity 0.2s ease-in;
+  transition: opacity 0.1s ease-in;
 
   @include tablets {
   }
@@ -160,5 +159,5 @@
 .team-accordeon__item--active .team-accordeon__name~div.team-accordeon__job,
 .team-accordeon__item--active .team-accordeon__name~p.team-accordeon__desc {
   opacity: 1;
-  transition: opacity 0.2s ease-in;
+  transition: opacity 0.1s ease-in;
 }

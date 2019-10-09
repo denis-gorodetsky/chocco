@@ -37,17 +37,27 @@ ul {
 
 .wrapper {
   position: relative;
-  min-height: 100%;
-  // min-width: 940px + 20px;
+  height: 100%;
   width: 100%;
-	overflow: hidden;
+  overflow: hidden;
+
+  @include phones {
+    min-height: unset;
+    height: 100%;
+  }
+}
+
+.maincontent {
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
 }
 
 .container {
   max-width: rem(940px);
   height: 100%;
   width: 95%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
